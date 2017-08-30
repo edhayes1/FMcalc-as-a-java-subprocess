@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=pis\ lastEventId
+comment0.target=boolean\ hasReceivedDummy(java.io.InputStream,\ int)
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
