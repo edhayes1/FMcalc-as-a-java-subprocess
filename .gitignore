@@ -4,3 +4,6 @@ cattest.java
 newsecondwait
 package.bluej
 README.TXT
+.gitignore
+gulout.class
+gulout.ctxt
