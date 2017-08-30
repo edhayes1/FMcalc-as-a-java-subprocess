@@ -89,7 +89,7 @@ public class gulout
                 if (currentEventId != lastEventId && !firstRun){    
                     pos.write(dummy);
                     pos.write(dummy2);  
-                    pos.flush();        //we need a flush after almost every write.
+                    pos.flush();        //we need a flush after every write.
                     
                     if(hasReceivedDummy(pis, lastEventId)){
                         Thread.sleep(1000);     //sleep for 1 sec after each event.
