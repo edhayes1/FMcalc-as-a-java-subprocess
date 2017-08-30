@@ -22,7 +22,9 @@ setvbuf(stdin, NULL, _IONBF, 0);
 ```
 must be added after line 193. *(in bewteen initstreams("","") and doit(new_max))*
 
-Ktools must then be installed as usual.
+Ktools must then be installed as usual in a linux environment.
+
+JRE must also be installed.
 
 ## Usage
 
