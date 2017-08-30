@@ -15,8 +15,6 @@ public class gulout
         
         while ((pis.read(eventHeader)) != -1){
             currentEventId = ByteBuffer.wrap(eventHeader).order(ByteOrder.LITTLE_ENDIAN).getInt();
-            System.err.println("lastEventId = " + lastEventId);
-            System.err.println("currentEventId = " + currentEventId);
             
             if(currentEventId == lastEventId){gotData = true;}  //make sure we have the data we were expecting
             
@@ -60,13 +58,13 @@ public class gulout
             
             pos.flush();
             
-            if ((pis.read(stream_id)) == -1){System.err.println("error reading fm stream_id & no samples");}
+            if ((pis.read(stream_id)) == -1){System.err.println("error reading fm stream_id & no samples");}        //nothing to do with the stream id and the number of samples.
             
             
             byte[] eventHeader =  new byte[8];
             byte[] sample =  new byte[8];
             
-            ByteBuffer bb = ByteBuffer.allocate(32);
+            ByteBuffer bb = ByteBuffer.allocate(32);        //use dummies between each event, fm will only give us back each event after we have started sending it the next one.
             bb.order(ByteOrder.LITTLE_ENDIAN).putInt(-2).putInt(1).putInt(-3).putInt(0).putInt(-1).putInt(0).putInt(0).putInt(0);
             byte[] dummy = bb.array();
             
@@ -86,7 +84,7 @@ public class gulout
                 if(firstRun){lastEventId = currentEventId;}
                 
                 
-                if (currentEventId != lastEventId && !firstRun){    
+                if (currentEventId != lastEventId && !firstRun){        //for a new event send the dummy events.
                     pos.write(dummy);
                     pos.write(dummy2);  
                     pos.flush();        //we need a flush after every write.
