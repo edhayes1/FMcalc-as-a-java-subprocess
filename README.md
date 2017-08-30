@@ -2,6 +2,11 @@
 
 It provides standard input for fmcalc and reads it's standard output.
 
+## Contents
+
+gulcalci.bin: A set of ground up losses (created using the ktools installer tests).
+gulout.jar: The executable to be run.
+gulout.java: Source code.
 
 ## Prerequisites
 
@@ -19,3 +24,6 @@ Ktools must then be installed as usual.
 
 ## Usage
 
+```
+java -jar gulout.jar < gulcalci.bin 
+```
