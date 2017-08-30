@@ -5,12 +5,14 @@ It provides standard input for fmcalc and reads it's standard output.
 ## Contents
 
 gulcalci.bin: A set of ground up losses (created using the ktools installer tests).
+
 gulout.jar: The executable to be run.
+
 gulout.java: Source code.
 
 ## Prerequisites
 
-a change must be made to ktools as follows: 
+A change must be made to ktools as follows: 
 
 In ktools/src/fmcalc/main.cpp the lines 
 
